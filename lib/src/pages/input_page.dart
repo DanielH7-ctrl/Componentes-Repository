@@ -129,6 +129,7 @@ Widget _crearFecha(BuildContext context) {
       initialDate: DateTime.now(),
       firstDate: DateTime(2018),
       lastDate: DateTime(2025),
+      locale: Locale('es', 'ES')
     );
     if ( picked != null ) {
       setState(() {
