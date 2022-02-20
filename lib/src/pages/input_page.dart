@@ -11,6 +11,10 @@ class _InputPageState extends State<InputPage> {
   String _email = '';
   String _fecha = '';
 
+  String _opcionSeleccionada = 'Volar';
+
+  List<String> _poderes = ['Volar','Rayos X','Super Aliento','Super Fuerza'];
+
   TextEditingController _inputFieldDateController = TextEditingController();
   
 
@@ -30,6 +34,8 @@ class _InputPageState extends State<InputPage> {
           _crearPassword(),
           Divider(),
           _crearFecha(context),
+          Divider(),
+          _crearDropdown(),
           Divider(),
           _crearPersona()
         ],
@@ -64,6 +70,7 @@ Widget  _crearPersona() {
   return ListTile(
     title: Text('Nombre es: $_nombre '),
     subtitle: Text('Email: $_email '),
+    trailing: Text(_opcionSeleccionada),
   );
 }
 
@@ -123,7 +130,7 @@ Widget _crearFecha(BuildContext context) {
   );
 }
 
-  void _selectDate(BuildContext context) async {
+void _selectDate(BuildContext context) async {
     DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -138,5 +145,44 @@ Widget _crearFecha(BuildContext context) {
       });
 
     }
+  }
+
+List<DropdownMenuItem<String>> getOpcionesDropdown() {
+  List<DropdownMenuItem<String>> lista = [];
+
+  _poderes.forEach((poder) {
+    lista.add(DropdownMenuItem(
+      child: Text(poder),
+      value: poder,
+    ));
+   });
+
+   return lista;
+
+}
+
+Widget _crearDropdown() {
+
+    return Row(
+      children: <Widget>[
+      Icon(Icons.select_all),
+      SizedBox(width: 30.0),
+      Expanded(
+        child: DropdownButton<String>(
+        value: _opcionSeleccionada,
+        items: getOpcionesDropdown(),
+        onChanged: (opt) {
+          setState(() {
+            _opcionSeleccionada = opt!;
+          });
+        },
+          ),
+      )
+      ],
+    );
+    
+    
+    
+    
   }
 }
