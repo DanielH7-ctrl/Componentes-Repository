@@ -55,7 +55,7 @@ Widget  _crearSlider() {
 
 Widget _crearImagen() {
   return  Image(
-    image: NetworkImage('https://playpilot.b-cdn.net/6790c15843da11ec93f90a58a9feac02/src/img?optimizer=image&quality=75&width=1280&aspect_ratio=16%3A9'),
+    image: NetworkImage('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/26f4e661-9a5e-4b69-bbf3-b4995e3c2576/degsi6s-23b32a95-018e-4d79-beb3-202213ca0f5c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI2ZjRlNjYxLTlhNWUtNGI2OS1iYmYzLWI0OTk1ZTNjMjU3NlwvZGVnc2k2cy0yM2IzMmE5NS0wMThlLTRkNzktYmViMy0yMDIyMTNjYTBmNWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.UVfbRs7_NBSCaV8E0crnhpW_500dXtTHFRlAnsQCi50'),
     width: _valorSlider,
     fit: BoxFit.contain,
   );
